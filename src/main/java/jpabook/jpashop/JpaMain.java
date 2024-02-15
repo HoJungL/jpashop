@@ -1,12 +1,18 @@
 package jpabook.jpashop;
 
 import jpabook.jpashop.domain.Member;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+/*
+@ManytoOne
+@OneToMany 쓸때, 앞의 many와 one의 기준은 ERD에서 본인이 기준임!
+*/
 public class JpaMain {
     public static void main(String[] args) {
 
@@ -16,6 +22,9 @@ public class JpaMain {
         tx.begin();
 
         try{
+
+            Order order = new Order();
+            order.addOrderItem(new OrderItem()); // Order에 public void add 보세연
 
             tx.commit();
 
