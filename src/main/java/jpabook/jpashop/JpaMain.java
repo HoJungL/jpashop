@@ -26,6 +26,14 @@ public class JpaMain {
             Order order = new Order();
             order.addOrderItem(new OrderItem()); // Order에 public void add 보세연
 
+            /* 이렇게 짜도 가능함. 문제가 없음 (단방향)
+            Order order = new Order();
+            em.persist(order);
+            OrderItem orderItem = new OrderItem();
+            orderItem.setOrder(order);
+            em.persist(orderItem);
+            */
+
             tx.commit();
 
         } catch(Exception e){

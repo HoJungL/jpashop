@@ -15,6 +15,8 @@ public class Member {
     private String street;
     private String zipcode;
 
+    // 사실 아래의 코드는 비즈니스상 불필요한 코드지만,
+    // 연습이기 때문에 넣은 코드임.
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>(); //관례야 관례
 
