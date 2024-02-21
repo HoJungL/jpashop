@@ -1,5 +1,6 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Book;
 import jpabook.jpashop.domain.Member;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
@@ -23,8 +24,13 @@ public class JpaMain {
 
         try{
 
-            Order order = new Order();
-            order.addOrderItem(new OrderItem()); // Order에 public void add 보세연
+            Book book = new Book();
+            book.setName("HJ's book");
+            book.setAuthor("HJ");
+            em.persist(book);
+
+//            Order order = new Order();
+//            order.addOrderItem(new OrderItem()); // Order에 public void add 보세연
 
             /* 이렇게 짜도 가능함. 문제가 없음 (단방향)
             Order order = new Order();
